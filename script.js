@@ -20,13 +20,14 @@ $(function() {
       </div>
     </li`>
   });
-
-  $('.shopping-item-controls').on('click', function() {
-    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
-    // $('.shopping-item-toggle').toggleClass('.shopping-item__checked .shopping-item-toggle')
+// to strike through checked off items
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').toggleClass('shopping-item__checked');
   } );
 
-  $('.shopping-item-delete').on('click', function() {
-    $(this).remove('.shopping-item')
+// to delete items
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+    $(this).closest('li').find('.shopping-item').remove();
   } );
+}
 }
