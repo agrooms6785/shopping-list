@@ -22,6 +22,11 @@ $(function() {
   });
 
   $('.shopping-item-controls').on('click', function() {
-    $('.shopping-item-toggle').toggleClass('.shopping-item__checked' > '.shopping-item-toggle')
-  } )
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+    // $('.shopping-item-toggle').toggleClass('.shopping-item__checked .shopping-item-toggle')
+  } );
+
+  $('.shopping-item-delete').on('click', function() {
+    $(this).remove('.shopping-item')
+  } );
 }
