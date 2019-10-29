@@ -7,7 +7,7 @@ $(function() {
   //allow user the ability to clear inputs
   $('#shopping-list-entry').val('');
   //allow user to add new item to list
-  $('.shopping-list').append(
+  $('.shopping-list').prepend(
     `<li>
       <span class="shopping-item">${newItem}</span>
       <div class="shopping-item-controls">
@@ -21,12 +21,12 @@ $(function() {
     </li>`);
 });
 // to strike through checked off items
-  $('.shopping-list').on('click', '.shopping-item-toggle', function(event)) {
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
     $(this).closest('li').toggleClass('shopping-item__checked');
   });
 
 // to delete items
-  $('.shopping-list').on('click', '.shopping-item-delete', function(event)) {
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
     $(this).closest('li').find('.shopping-item').remove();
   });
 }
